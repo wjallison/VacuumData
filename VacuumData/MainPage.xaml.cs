@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 //using System;
 //using System.Threading;
 using System.Diagnostics;
+using Windows.Devices.Gpio;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -68,6 +69,8 @@ namespace VacuumData
 
         public Test t = new Test();
 
+        //var gpio = GpioController.GetDefault();
+        GpioPin pin;
 
         //public Timer t;
 
@@ -83,6 +86,17 @@ namespace VacuumData
             vTypeSelectionBox.Items.Add("1550");
             vTypeSelectionBox.Items.Add("1550 HEPA");
             vTypeSelectionBox.Items.Add("Gas Vac");
+        }
+
+        private void InitGPIO()
+        {
+            var gpio = GpioController.GetDefault();
+            if(gpio == null)
+            {
+                pin = null;
+                return;
+            }
+            //pin = gpio.OpenPin()
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -119,6 +133,7 @@ namespace VacuumData
                 //add data to currentList
                 //add data to pressureList
                 //add data to flowList
+                
             }
 
             t.values[0] = t.averageData(openCurrentList);
