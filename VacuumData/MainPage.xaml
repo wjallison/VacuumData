@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="VacuumData.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VacuumData"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <FlipView x:Name="flipper" HorizontalAlignment="Center" VerticalAlignment="Top" Width="640" Margin="0,50,0,0" Height="310" SelectionChanged="flipper_SelectionChanged">
+            <FlipView.Template>
+                <ControlTemplate>
+                    <ItemsPresenter ManipulationMode="None"/>
+                </ControlTemplate>
+            </FlipView.Template>
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBox Text="Please Enter Serial Number:" VerticalAlignment="Center" IsReadOnly="True"/>
+                        <TextBox x:Name="snEntryTextBox" VerticalAlignment="Center" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Text="Please Select Vacuum Type:"/>
+                        <ComboBox x:Name="vTypeSelectionBox" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="zeroNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="zeroNextButton_Click"/>
+            </Grid>
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Connect Vacuum Hose"/>
+                    <Image x:Name="connectHoseImg"/>
+                </StackPanel>
+                <Button x:Name="oneNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="oneNextButton_Click"/>
+            </Grid>
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Make sure no plate is in the feed tube"/>
+                    <Image x:Name="emptyFeedTubeImg"/>
+                </StackPanel>
+                <Button x:Name="twoNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="twoNextButton_Click"/>
+            </Grid>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Turn on vacuum and press START"/>
+                    <Button x:Name="openFeedStartButton" Content="START" Click="openFeedStartButton_Click"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Running..."/>
+                    <ProgressBar x:Name="openProgress"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Place ONE cover on port and press START"/>
+                    <Image x:Name="onePortCoveredImg"/>
+                    <Button x:Name="halfFeedStartButton" Content="START" Click="halfFeedStartButton_Click"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Running..."/>
+                    <ProgressBar x:Name="halfProgress"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Place BOTH covers on ports and press START"/>
+                    <Image x:Name="bothPortsCoveredImg"/>
+                    <Button x:Name="closedFeedStartButton" Content="START" Click="closedFeedStartButton_Click"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBox Text="Running..."/>
+                    <ProgressBar x:Name="closedProgress"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                
+            </Grid>
+
+        </FlipView>
+
+        <Image HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="serialNumber" HorizontalAlignment="Center" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="NextButton" Visibility="Collapsed" Content="Next" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Click="NextButton_Click"/>
+        <Button x:Name="PrevButton" Visibility="Collapsed" Content="Prev" HorizontalAlignment="Left" Margin="245,332,0,0" VerticalAlignment="Top" Click="PrevButton_Click"/>
+
+
+    </Grid>
+</Page>
