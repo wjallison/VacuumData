@@ -22,6 +22,7 @@ using Windows.Devices.Enumeration;
 
 using ADC.Devices.I2c.ADS1115;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace VacuumData
@@ -76,6 +77,7 @@ namespace VacuumData
         public List<double> halfFlowList = new List<double>();
 
         public Test t = new Test();
+        public ReportAssembly r;
 
         #endregion
 
@@ -93,6 +95,9 @@ namespace VacuumData
         public MainPage()
         {
             this.InitializeComponent();
+            
+            //string s = 
+            
 
             #region Add types of vacuums
             vTypeSelectionBox.Items.Add("950");
@@ -154,11 +159,11 @@ namespace VacuumData
                 sensorPressure.Dispose();
                 sensorPressure = null;
             }
-            if(analogConverter != null)
-            {
-                analogConverter.Dispose();
-                analogConverter = null;
-            }
+            //if(analogConverter != null)
+            //{
+            //    analogConverter.Dispose();
+            //    analogConverter = null;
+            //}
         }
 
         async void StartStopScenario()
@@ -188,7 +193,31 @@ namespace VacuumData
             command[0] = 0xE3;
             //analogConverter.WriteRead()
 
+            if(adc != null && adc.IsInitialized)
+            {
+                try
+                {
+                    var rawAnalogValue = adc.readContinuous();
 
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+
+        private async void InitializeAnalogConvert()
+        {
+            try
+            {
+                adc = new ADS1115Sensor(AdcAddress.GND);
+                await adc.InitializeAsync();
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         #endregion
@@ -300,5 +329,21 @@ namespace VacuumData
 
         #endregion
 
+        private void saveAndQuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime current = new DateTime();
+            //System.IO.Stream s = new System.IO.Stream()
+            //using (System.IO.StreamWriter file = new StreamWriter(
+            //    Directory.GetCurrentDirectory() +@"\" + t.serialNumber + 
+            //    current.Year.ToString() + current.Month.ToString() + current.Day.ToString() + current.TimeOfDay.ToString()
+            //    + ".txt"))
+            //{
+
+            //}
+            System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + t.serialNumber +
+                current.Year.ToString() + current.Month.ToString() + current.Day.ToString() + current.TimeOfDay.ToString()
+                + ".txt",
+                r.report.ToString());
+        }
     }
 }

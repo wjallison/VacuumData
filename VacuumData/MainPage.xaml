@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <FlipView x:Name="flipper" HorizontalAlignment="Center" VerticalAlignment="Top" Width="640" Margin="0,50,0,0" Height="310" SelectionChanged="flipper_SelectionChanged">
+        <FlipView x:Name="flipper" HorizontalAlignment="Center" VerticalAlignment="Top" Width="640" Margin="0,50,0,0" Height="310" SelectionChanged="flipper_SelectionChanged" SelectedIndex="0">
             <FlipView.Template>
                 <ControlTemplate>
                     <ItemsPresenter ManipulationMode="None"/>
@@ -81,7 +81,7 @@
                 </StackPanel>
             </Grid>
             <Grid>
-                
+                <Button x:Name="saveAndQuitButton" Content="Save and Quit" Click="saveAndQuitButton_Click"/>
             </Grid>
 
         </FlipView>
