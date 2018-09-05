@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,10 @@ using Windows.UI.Xaml.Navigation;
 //using System.Threading;
 using System.Diagnostics;
 using Windows.Devices.Gpio;
+using Windows.Devices.I2c;
+using Windows.Devices.Enumeration;
+
+using ADC.Devices.I2c.ADS1115;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,6 +31,7 @@ namespace VacuumData
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        #region Preset minimums and maximums
         //Define minimums and maximums
         //public double min950CurrentFull = 0, max950CurrentFull = 20,
         //    min950CurrentHalf = 0, max950CurrentHalf = 
@@ -53,9 +59,11 @@ namespace VacuumData
         public double[] valuesGasVac = { 0, 0, 0, 0, 0, 0,
                                         0, 100, 0, 100, 0, 100,
                                         0, 1000, 0, 1000, 0, 0 };
+        #endregion
 
         public Stopwatch watch;
 
+        #region Data Storage
         public List<double> openCurrentList = new List<double>();
         public List<double> halfCurrentList = new List<double>();
         public List<double> closedCurrentList = new List<double>();
@@ -69,16 +77,24 @@ namespace VacuumData
 
         public Test t = new Test();
 
+        #endregion
+
         //var gpio = GpioController.GetDefault();
         GpioPin pin;
+
+        private I2cDevice sensorPressure;
+        private ADS1115Sensor adc;
+        //private I2cDevice analogConverter;
+        private DispatcherTimer timer;
+
 
         //public Timer t;
 
         public MainPage()
         {
             this.InitializeComponent();
-            //var autoEvent = new AutoResetEvent(false);
-            //var statusChecker = new StatusChecker(10);
+
+            #region Add types of vacuums
             vTypeSelectionBox.Items.Add("950");
             vTypeSelectionBox.Items.Add("950 HEPA");
             vTypeSelectionBox.Items.Add("1250");
@@ -86,8 +102,10 @@ namespace VacuumData
             vTypeSelectionBox.Items.Add("1550");
             vTypeSelectionBox.Items.Add("1550 HEPA");
             vTypeSelectionBox.Items.Add("Gas Vac");
+            #endregion
         }
 
+        #region i2c work
         private void InitGPIO()
         {
             var gpio = GpioController.GetDefault();
@@ -99,6 +117,83 @@ namespace VacuumData
             //pin = gpio.OpenPin()
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            //base.OnNavigatedFrom(e);
+            StopScenario();
+        }
+
+        private async Task StartScenarioAsync()
+        {
+            string i2cDeviceSelector = I2cDevice.GetDeviceSelector();
+            IReadOnlyList<DeviceInformation> devices = await DeviceInformation.FindAllAsync(i2cDeviceSelector);
+
+            //TODO: Find proper settings value.
+            var pressureDevice_settings = new I2cConnectionSettings(0x40);
+            //var analogConverter_settings = new I2cConnectionSettings(0x40);
+
+            sensorPressure = await I2cDevice.FromIdAsync(devices[0].Id, pressureDevice_settings);
+            //analogConverter = await I2cDevice.FromIdAsync(devices[1].Id, analogConverter_settings);
+
+            timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(500) };
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        void StopScenario()
+        {
+            if(timer != null)
+            {
+                timer.Tick -= Timer_Tick;
+                timer.Stop();
+                timer = null;
+            }
+
+            if(sensorPressure != null)
+            {
+                sensorPressure.Dispose();
+                sensorPressure = null;
+            }
+            if(analogConverter != null)
+            {
+                analogConverter.Dispose();
+                analogConverter = null;
+            }
+        }
+
+        async void StartStopScenario()
+        {
+            if(timer != null)
+            {
+                StopScenario();
+            }
+            else
+            {
+                await StartScenarioAsync();
+            }
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            //throw new NotImplementedException();
+            var command = new byte[1];
+            var PressureData = new byte[2];
+            var PDiffData = new byte[2];
+            var CurrentData = new byte[2];
+
+            //TODO: Find proper commands
+            command[0] = 0xE5;
+            sensorPressure.WriteRead(command, PressureData);
+
+            command[0] = 0xE3;
+            //analogConverter.WriteRead()
+
+
+        }
+
+        #endregion
+
+        #region No Longer Used Event Handlers
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -122,7 +217,9 @@ namespace VacuumData
             }
             catch { }
         }
+        #endregion
 
+        #region Page flipping buttons
         private void openFeedStartButton_Click(object sender, RoutedEventArgs e)
         {
             //Start Recording
@@ -176,6 +273,32 @@ namespace VacuumData
         {
 
         }
-        
+        #endregion
+
+        #region Convert Data to usable units
+
+        public double ConvertToInH2O(byte[] inData)
+        {
+            double result = 0;
+
+            return result;
+        }
+
+        public double ConvertToCurrent(byte[] inData)
+        {
+            double result = 0;
+
+            return result;
+        }
+
+        public double ConvertToMetersPerSecond(byte[] inData)
+        {
+            double result = 0;
+
+            return result;
+        }
+
+        #endregion
+
     }
 }
