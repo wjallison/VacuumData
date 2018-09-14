@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>a9bc7296-6719-4829-88b4-7751e768a9eb</PackageIdentityName>
     <PackageIdentityPublisher>CN=Jack</PackageIdentityPublisher>
-    <IntermediateOutputPath>c:\users\jack\source\repos\VacuumData\VacuumData\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Jack\source\repos\VacuumData\VacuumData\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>7EBCF74581E0579C9590B6EED9EEEC94F7488F834F67B38B73F5619D1D11794C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>a9bc7296-6719-4829-88b4-7751e768a9eb_1.0.0.0_x86__gw6f4zr971emm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>a9bc7296-6719-4829-88b4-7751e768a9eb_gw6f4zr971emm!App</RegisteredUserModeAppID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-31T22:20:38.744</Modified>
+      <Modified>2018-09-07T19:17:15.170</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\VacuumData.exe">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\VacuumData.exe">
       <PackagePath>entrypoint\VacuumData.exe</PackagePath>
-      <Modified>2018-08-31T22:20:38.461</Modified>
+      <Modified>2018-09-07T19:17:14.887</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -495,68 +495,68 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-12T06:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-08-31T21:53:22.135</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-05-25T17:28:25.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\VacuumData.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\VacuumData.xr.xml">
       <PackagePath>VacuumData.xr.xml</PackagePath>
-      <Modified>2018-08-31T22:20:38.303</Modified>
+      <Modified>2018-09-07T19:17:14.663</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-08-31T22:20:38.310</Modified>
+      <Modified>2018-09-07T19:17:14.704</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-08-31T22:20:38.311</Modified>
+      <Modified>2018-09-07T19:17:14.705</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2018-04-20T05:01:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-31T22:16:23.118</Modified>
+      <Modified>2018-09-07T19:14:20.624</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\Core\VacuumData.exe">
+    <AppxPackagedFile Include="C:\Users\Jack\source\repos\VacuumData\VacuumData\bin\x86\Debug\Core\VacuumData.exe">
       <PackagePath>VacuumData.exe</PackagePath>
-      <Modified>2018-08-31T22:20:38.739</Modified>
+      <Modified>2018-09-07T19:17:15.164</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

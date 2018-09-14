@@ -111,6 +111,15 @@ namespace VacuumData
         }
 
         #region i2c work
+
+        private void TakeData()
+        {
+            //Init GPIO
+
+            //Record Data to relevant list
+
+
+        }
         private void InitGPIO()
         {
             var gpio = GpioController.GetDefault();
@@ -344,6 +353,11 @@ namespace VacuumData
                 current.Year.ToString() + current.Month.ToString() + current.Day.ToString() + current.TimeOfDay.ToString()
                 + ".txt",
                 r.report.ToString());
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

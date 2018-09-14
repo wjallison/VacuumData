@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <FlipView x:Name="flipper" HorizontalAlignment="Center" VerticalAlignment="Top" Width="640" Margin="0,50,0,0" Height="310" SelectionChanged="flipper_SelectionChanged" SelectedIndex="0">
+        <FlipView x:ConnectionId='2' x:Name="flipper" HorizontalAlignment="Center" VerticalAlignment="Top" Width="640" Margin="0,50,0,0" Height="310"                                             SelectedIndex="0">
             <FlipView.Template>
                 <ControlTemplate>
                     <ItemsPresenter ManipulationMode="None"/>
@@ -19,76 +19,76 @@
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                         <TextBox Text="Please Enter Serial Number:" VerticalAlignment="Center" IsReadOnly="True"/>
-                        <TextBox x:Name="snEntryTextBox" VerticalAlignment="Center" Width="200"/>
+                        <TextBox x:ConnectionId='25' x:Name="snEntryTextBox" VerticalAlignment="Center" Width="200"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBox Text="Please Select Vacuum Type:"/>
-                        <ComboBox x:Name="vTypeSelectionBox" Width="150"/>
+                        <ComboBox x:ConnectionId='24' x:Name="vTypeSelectionBox" Width="150"/>
                     </StackPanel>
                 </StackPanel>
-                <Button x:Name="zeroNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="zeroNextButton_Click"/>
+                <Button x:ConnectionId='23' x:Name="zeroNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom"                             />
             </Grid>
             <Grid>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Connect Vacuum Hose"/>
-                    <Image x:Name="connectHoseImg"/>
+                    <Image x:ConnectionId='22' x:Name="connectHoseImg"/>
                 </StackPanel>
-                <Button x:Name="oneNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="oneNextButton_Click"/>
+                <Button x:ConnectionId='21' x:Name="oneNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom"                            />
             </Grid>
             <Grid>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Make sure no plate is in the feed tube"/>
-                    <Image x:Name="emptyFeedTubeImg"/>
+                    <Image x:ConnectionId='20' x:Name="emptyFeedTubeImg"/>
                 </StackPanel>
-                <Button x:Name="twoNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="twoNextButton_Click"/>
+                <Button x:ConnectionId='19' x:Name="twoNextButton" Content="Next" HorizontalAlignment="Right" VerticalAlignment="Bottom"                            />
             </Grid>
             <Grid>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Turn on vacuum and press START"/>
-                    <Button x:Name="openFeedStartButton" Content="START" Click="openFeedStartButton_Click"/>
+                    <Button x:ConnectionId='18' x:Name="openFeedStartButton" Content="START"                                  />
                 </StackPanel>
             </Grid>
             <Grid>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Running..."/>
-                    <ProgressBar x:Name="openProgress"/>
+                    <ProgressBar x:ConnectionId='17' x:Name="openProgress"/>
                 </StackPanel>
             </Grid>
             <Grid>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Place ONE cover on port and press START"/>
-                    <Image x:Name="onePortCoveredImg"/>
-                    <Button x:Name="halfFeedStartButton" Content="START" Click="halfFeedStartButton_Click"/>
+                    <Image x:ConnectionId='15' x:Name="onePortCoveredImg"/>
+                    <Button x:ConnectionId='16' x:Name="halfFeedStartButton" Content="START"                                  />
                 </StackPanel>
             </Grid>
             <Grid>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Running..."/>
-                    <ProgressBar x:Name="halfProgress"/>
+                    <ProgressBar x:ConnectionId='14' x:Name="halfProgress"/>
                 </StackPanel>
             </Grid>
             <Grid>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Place BOTH covers on ports and press START"/>
-                    <Image x:Name="bothPortsCoveredImg"/>
-                    <Button x:Name="closedFeedStartButton" Content="START" Click="closedFeedStartButton_Click"/>
+                    <Image x:ConnectionId='12' x:Name="bothPortsCoveredImg"/>
+                    <Button x:ConnectionId='13' x:Name="closedFeedStartButton" Content="START"                                    />
                 </StackPanel>
             </Grid>
             <Grid>
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBox Text="Running..."/>
-                    <ProgressBar x:Name="closedProgress"/>
+                    <ProgressBar x:ConnectionId='11' x:Name="closedProgress"/>
                 </StackPanel>
             </Grid>
             <Grid>
-                <Button x:Name="saveAndQuitButton" Content="Save and Quit" Click="saveAndQuitButton_Click"/>
+                <Button x:ConnectionId='10' x:Name="saveAndQuitButton" Content="Save and Quit"                                />
             </Grid>
 
         </FlipView>
 
         <Image HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="180"/>
-        <TextBox x:Name="serialNumber" HorizontalAlignment="Center" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="SettingsButton" Visibility="Collapsed" Content="Settings" HorizontalAlignment="Right" VerticalAlignment="Top" Click="SettingsButton_Click">
+        <TextBox x:ConnectionId='3' x:Name="serialNumber" HorizontalAlignment="Center" Text="" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='4' x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Right" VerticalAlignment="Top"                             >
             <Button.Flyout>
                 <Flyout>
                     <Flyout.FlyoutPresenterStyle>
@@ -104,19 +104,20 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="SettingsBlock_title_0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <TextBlock x:ConnectionId='7' x:Name="SettingsBlock_title_0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
                         <TextBlock Text="Min Allowed Current:" Grid.Row="1" Grid.Column="0"/>
-                        <TextBox x:Name="SettingsBox_minC_0" Grid.Row="1" Grid.Column="1"/>
+                        <TextBox x:ConnectionId='8' x:Name="SettingsBox_minC_0" Grid.Row="1" Grid.Column="1"/>
                         <TextBlock Text="Max Allowed Current:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox x:Name="SettingsBox_maxC_0" Grid.Row="2" Grid.Column="1"/>
+                        <TextBox x:ConnectionId='9' x:Name="SettingsBox_maxC_0" Grid.Row="2" Grid.Column="1"/>
                     </Grid>
                 </Flyout>
             </Button.Flyout>
         </Button>
-        <Button x:Name="NextButton" Visibility="Collapsed" Content="Next" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Click="NextButton_Click"/>
-        <Button x:Name="PrevButton" Visibility="Collapsed" Content="Prev" HorizontalAlignment="Left" Margin="245,332,0,0" VerticalAlignment="Top" Click="PrevButton_Click"/>
+        <Button x:ConnectionId='5' x:Name="NextButton" Visibility="Collapsed" Content="Next" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='6' x:Name="PrevButton" Visibility="Collapsed" Content="Prev" HorizontalAlignment="Left" Margin="245,332,0,0" VerticalAlignment="Top"                         />
 
         
 
     </Grid>
 </Page>
+

@@ -1,1 +1,1 @@
-c:\users\jack\source\repos\VacuumData\VacuumData\VacuumData.csproj;x86
+C:\Users\Jack\source\repos\VacuumData\VacuumData\VacuumData.csproj;x86
